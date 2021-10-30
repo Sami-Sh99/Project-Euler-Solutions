@@ -1,6 +1,16 @@
-n = 100
+def gcd(a, b):
+    while(a != 0):
+        c = a
+        a = b % a
+        b = c
+    return b
 
-x1 = n*(n+1)/2
-x2 = n*(n+1)*(2*n+1)/6
 
-print(x1**2-x2)
+def lcm(a, b):
+    return a*(b/gcd(a, b))
+
+
+a = 1
+for i in range(1, 21):
+    a = int(lcm(a, i))
+print(a)
